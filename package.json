@@ -1,0 +1,31 @@
+{
+  "name": "i-ching-reading",
+  "version": "1.0.0",
+  "description": "Cast a free online I Ching reading: toss three coins six times to build a hexagram, with changing lines and a resulting hexagram.",
+  "repository": "github:evoluteur/i-ching-reading",
+  "homepage": "https://evoluteur.github.io/i-ching-reading/",
+  "copyright": "(c) 2026 Olivier Giulieri",
+  "author": "Olivier Giulieri (https://evoluteur.github.io/)",
+  "license": "MIT",
+  "keywords": [
+    "i-ching",
+    "iching",
+    "yijing",
+    "i-ching-reading",
+    "hexagram",
+    "hexagrams",
+    "trigram",
+    "king-wen",
+    "three-coin-method",
+    "changing-lines",
+    "book-of-changes",
+    "divination",
+    "oracle",
+    "fortune-telling",
+    "esoteric",
+    "esoterica",
+    "chinese",
+    "svg",
+    "javascript"
+  ]
+}

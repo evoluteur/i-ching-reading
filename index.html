@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>I Ching Reading</title>
+    <meta
+      name="description"
+      content="Cast a free online I Ching reading — toss three coins six times to build a hexagram, with changing lines and a resulting hexagram."
+    />
+    <meta name="author" content="Olivier Giulieri" />
+    <link rel="icon" type="image/png" href="favicon.png" />
+    <meta name="theme-color" content="#1a212d" />
+
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Overpass"
+    />
+    <link id="omg-core-css" rel="stylesheet" href="css/core.css" />
+    <link id="omg-theme-css" rel="stylesheet" href="css/themes/dark/dark.css" />
+    <link id="omg-density-css" rel="stylesheet" href="css/densities.css" />
+    <link rel="stylesheet" href="css/iching.css" />
+    <link rel="stylesheet" href="css/about.css" />
+
+    <script src="js/omg.js"></script>
+    <script src="js/iching-data.js"></script>
+    <script src="js/iching.js"></script>
+  </head>
+
+  <body onload="setupPage('home'); initIChing();" id="omg-body">
+    <div id="omg-header">
+      <h1>I Ching Reading</h1>
+      <div id="omg-theme-picker"></div>
+    </div>
+    <h2 id="spread-title">Cast a Hexagram</h2>
+    <div class="content">
+      <p id="spread-tagline" class="tagline">
+        Toss three coins six times, building your hexagram from the bottom line
+        up. Changing lines turn it into a second hexagram showing where the
+        situation is heading.
+      </p>
+
+      <div id="cast-area" class="cast-area"></div>
+      <div id="toss-log" class="toss-log"></div>
+
+      <div id="interpret-bar" class="interpret-bar"></div>
+
+      <div id="hexagram-board" class="hexagram-board"></div>
+      <p id="stable-note" class="interpret-note"></p>
+      <div id="interpretation-view" class="interpretation-view"></div>
+
+      <div class="big-v-space"></div>
+      <div class="footer">
+        <p><a href="about.html">About the I Ching</a></p>
+        <p>Hexagram names and trigram structure follow the traditional King Wen sequence; summaries and advice were written for this app.</p>
+        <p>
+          I Ching Reading is open source on
+          <a href="https://github.com/evoluteur/i-ching-reading">GitHub</a>
+          with an MIT license.
+        </p>
+        <p>
+          Had fun browsing the app?
+          <a href="https://github.com/sponsors/evoluteur">Buy me a coffee by becoming a sponsor</a>.
+        </p>
+        <p>
+          You may also like <a href="https://evoluteur.github.io/tarot-reading/">Tarot</a>, <a href="https://evoluteur.github.io/rune-reading/">Runes</a>, and <a href="https://evoluteur.github.io/motivational-numerology/">Motivational Numerology</a>. For more mystic arts as small web apps, see
+          <a href="https://evoluteur.github.io/projects/esoterica.html">Esoterica</a>.
+        </p>
+        <p class="copyright">
+          &#169; 2026
+          <a href="https://evoluteur.github.io/">Olivier Giulieri</a>
+        </p>
+      </div>
+    </div>
+
+    <div id="detail-overlay" class="detail-overlay"></div>
+    <aside id="card-detail" class="card-detail pane"></aside>
+  </body>
+</html>
