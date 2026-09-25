@@ -16,6 +16,8 @@ const TOSS_MS = 900;
 
 let cast = []; // one { coins: [2|3, 2|3, 2|3], value: 6..9 } per line, bottom to top
 let tossing = false;
+let tossAllTimer = null; // Toss All: adds the remaining lines one by one
+const TOSS_ALL_DELAY_MS = 400;
 let interpretMode = false;
 let activeDetail = null; // "primary" | "relating" | null
 
@@ -94,9 +96,16 @@ const renderCastArea = () => {
     <div class="coins">${faces.map((f) => coinMarkup(f, tossing)).join("")}</div>
     <div class="cast-controls">
       <div class="cast-progress">Line ${nextLine} of 6${nextLine === 1 ? " · the bottom line" : ""}</div>
-      <button type="button" class="toss-btn" onclick="tossCoinsClick()"${tossing ? " disabled" : ""}>
-        ${cast.length === 0 ? "Toss Coins" : "Toss for Next Line"}
-      </button>
+      <div class="toss-buttons">
+        <button type="button" class="toss-btn" onclick="tossCoinsClick()"${tossing || tossAllTimer ? " disabled" : ""}>
+          ${cast.length === 0 ? "Toss Coins" : "Toss for Next Line"}
+        </button>
+        ${
+          6 - cast.length > 1
+            ? `<button type="button" class="toss-btn secondary" onclick="tossAllClick()"${tossing || tossAllTimer ? " disabled" : ""}>Toss All</button>`
+            : ""
+        }
+      </div>
     </div>`;
 };
 
@@ -193,7 +202,7 @@ const renderAll = () => {
 };
 
 const tossCoinsClick = () => {
-  if (tossing || isComplete()) return;
+  if (tossing || tossAllTimer || isComplete()) return;
   tossing = true;
   closeDetail();
   renderCastArea();
@@ -214,7 +223,32 @@ const tossCoinsClick = () => {
   }, TOSS_MS);
 };
 
+// Tosses the remaining lines one by one, 400ms apart (like "Draw All" in
+// Rune Reading): each toss shows its coins and joins the log.
+const stopTossAll = () => {
+  if (tossAllTimer) clearTimeout(tossAllTimer);
+  tossAllTimer = null;
+};
+const tossAllClick = () => {
+  if (tossing || tossAllTimer || isComplete()) return;
+  closeDetail();
+  const step = () => {
+    const coins = [0, 1, 2].map(() => (Math.random() < 0.5 ? 2 : 3));
+    cast.push({ coins, value: coins[0] + coins[1] + coins[2] });
+    saveReading();
+    if (isComplete()) {
+      tossAllTimer = null;
+      renderAll();
+    } else {
+      tossAllTimer = setTimeout(step, TOSS_ALL_DELAY_MS);
+      renderAll();
+    }
+  };
+  step();
+};
+
 const newReading = () => {
+  stopTossAll();
   cast = [];
   tossing = false;
   interpretMode = false;

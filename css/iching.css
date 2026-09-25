@@ -240,8 +240,39 @@
 .cast-progress {
   opacity: 0.85;
 }
+.toss-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+}
 .toss-btn {
-  margin: 4px 0 0;
+  margin: 4px 5px 0 0;
+}
+/* "Toss All": an outline button, as "Draw All" in Rune Reading */
+.toss-btn.secondary {
+  background-color: transparent;
+  border: 2px solid #3182ce;
+}
+.toss-btn.secondary:hover,
+.toss-btn.secondary:focus {
+  background-color: #2b6cb0;
+}
+/* light theme: the theme's buttons have white text, which vanishes on the transparent outline button */
+html[data-theme="light"] .toss-btn.secondary {
+  color: #2b6cb0;
+}
+html[data-theme="light"] .toss-btn.secondary:hover,
+html[data-theme="light"] .toss-btn.secondary:focus {
+  color: white;
+}
+/* blue theme: the outline button must stand out on the blue background */
+html[data-theme="evol-blue"] .toss-btn.secondary {
+  color: white;
+  border-color: white;
+}
+html[data-theme="evol-blue"] .toss-btn.secondary:hover,
+html[data-theme="evol-blue"] .toss-btn.secondary:focus {
+  background-color: rgba(255, 255, 255, 0.2);
 }
 .toss-btn:disabled {
   opacity: 0.6;
@@ -397,4 +428,9 @@
   .hex-card {
     width: 100%;
   }
+}
+
+/* less empty space above the footer (the shared core.css puts 90vh there) */
+.big-v-space {
+  margin-top: 40px;
 }
