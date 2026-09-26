@@ -2,6 +2,18 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-063933E3C2"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "G-063933E3C2");
+    </script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>I Ching Reading</title>
     <meta
@@ -27,7 +39,13 @@
     <script src="js/iching.js"></script>
   </head>
 
-  <body onload="setupPage('home'); initIChing();" id="omg-body">
+  <body
+    onload="
+      setupPage('home');
+      initIChing();
+    "
+    id="omg-body"
+  >
     <div id="omg-header">
       <h1>I Ching Reading</h1>
       <div id="omg-theme-picker"></div>
@@ -51,8 +69,13 @@
 
       <div class="big-v-space"></div>
       <div class="footer">
-        <p><a href="about.html">About the I Ching</a></p>
-        <p>Hexagram names and trigram structure follow the traditional King Wen sequence; summaries and advice were written for this app.</p>
+        <p>
+          <a href="about.html">About the I Ching</a>
+        </p>
+        <p>
+          Hexagram names and trigram structure follow the traditional King Wen
+          sequence; summaries and advice were written for this app.
+        </p>
         <p>
           I Ching Reading is open source on
           <a href="https://github.com/evoluteur/i-ching-reading">GitHub</a>
@@ -60,11 +83,18 @@
         </p>
         <p>
           Had fun browsing the app?
-          <a href="https://github.com/sponsors/evoluteur">Buy me a coffee by becoming a sponsor</a>.
+          <a href="https://github.com/sponsors/evoluteur"
+            >Buy me a coffee by becoming a sponsor</a
+          >.
         </p>
         <p>
-          You may also like <a href="https://evoluteur.github.io/tarot-reading/">Tarot</a>, <a href="https://evoluteur.github.io/rune-reading/">Runes</a>, and <a href="https://evoluteur.github.io/motivational-numerology/">Motivational Numerology</a>. For more mystic arts as small web apps, see
-          <a href="https://evoluteur.github.io/projects/esoterica.html">Esoterica</a>.
+          You may also like
+          <a href="https://evoluteur.github.io/tarot-reading/">Tarot</a>,
+          <a href="https://evoluteur.github.io/rune-reading/">Runes</a>, and
+          <a href="https://evoluteur.github.io/motivational-numerology/"
+            >Motivational Numerology</a
+          >. For more mystic arts as small web apps, see
+          <a href="https://evoluteur.github.io/esoterica.html">Esoterica</a>.
         </p>
         <p class="copyright">
           &#169; 2026
