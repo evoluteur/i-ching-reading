@@ -4,7 +4,7 @@ Cast an I Ching reading right in your browser: toss three coins six times to bui
 
 - [Cast a hexagram](https://evoluteur.github.io/i-ching-reading/)
 
-![I Ching Reading](i-ching-reading.png)
+[![I Ching Reading](i-ching-reading.png)](https://evoluteur.github.io/i-ching-reading/)
 
 ## What it does
 
