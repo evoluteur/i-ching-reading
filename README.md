@@ -3,6 +3,7 @@
 Cast an I Ching reading right in your browser: toss three coins six times to build a hexagram from the bottom line up, with changing lines and the second hexagram they turn it into. No sign-up and no libraries.
 
 - [Cast a hexagram](https://evoluteur.github.io/i-ching-reading/)
+- [The 64 hexagrams](https://evoluteur.github.io/i-ching-reading/hexagrams/): one page per hexagram, with its meaning, advice, trigrams and lines
 
 [![I Ching Reading](i-ching-reading.png)](https://evoluteur.github.io/i-ching-reading/)
 
@@ -35,9 +36,19 @@ All 64 hexagrams are included, in the traditional King Wen sequence, each built 
 
 The names, characters and trigram structure are the traditional ones. The keywords, summaries and advice are original wording written for this app, and no translation text is reproduced. A reading is a mirror for your own judgment, not a verdict.
 
+## Hexagram pages
+
+Every hexagram also has its own static page (`hexagrams/1-the-creative.html` ... `hexagrams/64-before-completion.html`), plus a page listing all 64 (`hexagrams/index.html`), so each hexagram can be found, shared and indexed on its own. Each page shows the hexagram's meaning, advice, trigrams and six lines, and links to its nuclear, opposite and inverse hexagrams. They are generated from the same data as the app:
+
+```
+npm run build
+```
+
+This runs [scripts/build-hexagram-pages.js](https://github.com/evoluteur/i-ching-reading/blob/main/scripts/build-hexagram-pages.js), which reads [js/iching-data.js](https://github.com/evoluteur/i-ching-reading/blob/main/js/iching-data.js) and rewrites the pages, `sitemap.xml` and `robots.txt`. It only needs Node. Re-run it after editing the data and commit the result.
+
 ## How it is built
 
-The pages are plain HTML, CSS and JavaScript, with no dependencies and no build step. Just open `index.html`.
+The app itself is plain HTML, CSS and JavaScript, with no dependencies and no build step. Just open `index.html`. (The only build step is the optional one above that regenerates the static hexagram pages.)
 
 - The hexagrams are drawn as SVG, so they look the same everywhere.
 - The hexagram data is in [js/iching-data.js](https://github.com/evoluteur/i-ching-reading/blob/main/js/iching-data.js), and the app logic in [js/iching.js](https://github.com/evoluteur/i-ching-reading/blob/main/js/iching.js).
