@@ -195,7 +195,7 @@ const footer = () => `
           <a href="https://github.com/sponsors/evoluteur">Buy me a coffee by becoming a sponsor</a>.
         </p>
         <p>
-          You may also enjoy other readings like <a href="https://evoluteur.github.io/tarot-reading/">Tarot</a>, <a href="https://evoluteur.github.io/rune-reading/">Runes</a>, and <a href="https://evoluteur.github.io/motivational-numerology/">Numerology</a>. For more mystic arts as small web apps, see
+          You may also enjoy other readings like <a href="https://evoluteur.github.io/tarot-reading/">Tarot</a>, <a href="https://evoluteur.github.io/rune-reading/">Runes</a>, <a href="https://evoluteur.github.io/tibetan-mo-reading/">Tibetan Mo</a>, and <a href="https://evoluteur.github.io/motivational-numerology/">Numerology</a>. For more mystic arts as small web apps, see
           <a href="https://evoluteur.github.io/esoterica.html">Esoterica</a>.
         </p>
         <p class="copyright">
